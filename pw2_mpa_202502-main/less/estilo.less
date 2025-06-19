@@ -1,0 +1,65 @@
+// less/estilo.less
+
+@color-primary: #4f46e5;
+@color-secondary: #8b5e3c;
+@card-radius: 10px;
+
+.card-holder {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.card {
+  border-radius: @card-radius;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  background: white;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  position: relative;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .card-header-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem;
+    font-weight: bold;
+  }
+}
+
+.card-body {
+  padding: 1rem;
+  background: @color-secondary;
+  color: white;
+}
+
+.card-footer {
+  padding: 1rem;
+  background: @color-secondary;
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    background: @color-primary;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+
+    &:hover {
+      background: darken(@color-primary, 10%);
+    }
+  }
+}
